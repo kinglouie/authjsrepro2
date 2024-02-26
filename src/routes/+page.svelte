@@ -1,7 +1,7 @@
 <script>
   import { SignIn, SignOut } from "@auth/sveltekit/components";
   import { page } from "$app/stores";
-  $: console.log($page.data.session);
+  // $: console.log($page.data.session);
 </script>
 
 <h1>SvelteKit Auth Example</h1>
@@ -14,7 +14,7 @@
     <SignOut>Sign out</SignOut>
   {:else}
     <span class="notSignedInText">You are not signed in</span>
-    <SignIn provider="credentials">
+    <SignIn provider="credentials" options={{ redirectTo: "/test" }}>
       <div slot="credentials">
         <label class="label" for="email">Email</label>
         <input
